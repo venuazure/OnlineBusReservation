@@ -1,0 +1,2997 @@
+this conference will now be recorded
+
+okay good morning guys
+
+so today let's quickly uh go through
+
+some of the slides and get into the uh
+
+CI pipeline creation using Azure
+
+pipelines okay
+
+so as I said
+
+these are the different uh
+
+uh or I would say comprehensive list of
+
+high level tasks that we need to do
+
+to create a pipeline all the way from
+
+connecting to core repository
+
+environment setup dependency management
+
+solution unit test cases code coverage
+
+Etc right
+
+and we use our classic editor we'll talk
+
+about ml as well no one is there
+
+and this is just a you know some
+
+descriptions for you basically okay
+
+but we already know we already already
+
+know it okay
+
+so how do you connect your code
+
+repository so
+
+uh I mean as I told you Azure reports is
+
+based on uh your you know git right uh
+
+but your Azure devops supports not only
+
+Azure reports it will support other
+
+source Control Management Systems as
+
+well uh so it is very much possible in
+
+any company that you know uh having
+
+multiple SCM software Source control
+
+management software so from here onwards
+
+as I told you right I may use world word
+
+called SCM or I may use it as a code
+
+repository or I may use it as a Version
+
+Control
+
+I mean I mean any one of these three
+
+words referring to the same escalate so
+
+uh so we will we can connect with Azure
+
+reports or get the coding git GitHub
+
+which is a public and private as well
+
+and uh you can keep code in bitbucket or
+
+subversion it will support multiple uh
+
+repositories basically so you can
+
+connect to anything when you are
+
+creating a CI pipeline
+
+we will select a repo and then we'll
+
+select the project basically okay it
+
+doesn't matter right which software you
+
+are using for sem your code will still
+
+be the same
+
+and then while setting up the
+
+environment the second one so we have to
+
+select the Microsoft hosted agent or
+
+self hosted agent
+
+okay
+
+that is means it is nothing but your uh
+
+you are selecting environment it is
+
+basically a virtual machine or physical
+
+machine where you have all the
+
+prerequisite softwares basically to run
+
+your work or to build your application
+
+and then we will configure the agent
+
+environment if it is uh dot net we will
+
+select Ms build if it is a Java we will
+
+select Maven and we also need to mention
+
+Visual Studio or Eclipse Etc okay I'm
+
+just giving you a quick run through so
+
+that uh you can save it as a screenshots
+
+Etc so that it is helpful for you when
+
+you are revising it basically okay
+
+and then there is some parallel
+
+execution you know a criteria like you
+
+know if I have a multiple jobs in my uh
+
+multiple jobs in my same pipeline I can
+
+execute them in parallel as well we'll
+
+talk about what is that parallel
+
+execution okay not now okay when we are
+
+working on it we will talk about
+
+it and then dependency management as you
+
+know it's all about uh maintaining your
+
+the developers reusable components some
+
+of them are
+
+automatically created by your Visual
+
+Studio means whenever the software
+
+installed all those components come with
+
+that software like in a visual studio
+
+software along with that basically it
+
+basically Visual Studio downloads you
+
+know your dotnet framework as well okay
+
+in a nutshell okay or the reusable
+
+components created by other developers
+
+or other teams or external companies as
+
+well they develop it and keep it in the
+
+Nugget store and the developers can go
+
+ahead and download from that nugget
+
+store uh to use in their application or
+
+in their.net projects okay so here you
+
+can use a nuget which is a public one
+
+and then Azure artifacts which is a
+
+private one for us so both are same so
+
+the way you are having a different
+
+programming languages to develop web
+
+application in the same way you have a
+
+different software to manage your
+
+artifacts as well so so you can develop
+
+the same let us say you take a make
+
+military application right you can
+
+develop it in either.net either in Java
+
+I mean it doesn't matter right but it's
+
+all it all depends on you know the
+
+company's preference or the availability
+
+of the skill sets nothing more than that
+
+so you can download all those
+
+third-party packages or dlls whatever it
+
+is from nougata Russia uh Azure
+
+artifacts basically so again here also
+
+here uh self so there is something you
+
+need to remember self-hosted agents or
+
+Azure artifacts reduce time to restore
+
+okay
+
+if you are using Azure let us say you
+
+take you know yesterday we downloaded uh
+
+one uh you know one dll right what is
+
+the send greater data uh dll from nugget
+
+okay imagine if you are downloading it
+
+downloading it from nugget it may take
+
+let us say some 10 seconds I'm just
+
+giving an example some will take even
+
+minutes as well so let us say it will
+
+take 10 seconds but if you are taking it
+
+from Azure artifacts it may take only
+
+one second the reason your code is your
+
+code your CI pipeline your environment
+
+everything is in Azure devops and which
+
+is in public Cloud right and on that
+
+public Cloud Azure cloud is connected to
+
+your network but nugget is a public
+
+repository nobody gives you some SLA
+
+right you will be able to download in
+
+one minute Etc they don't give you and
+
+again it has to come from internet and
+
+it has to go through some security scans
+
+in our infrastructure and then it has to
+
+be downloaded so it takes some time so
+
+if you use Azure article at the time
+
+will be less
+
+and then you have to have a task for
+
+building the solution like compilation
+
+so in our results today we'll go and
+
+select a build solution menu at 100
+
+similarly here you don't have Visual
+
+Studio it is all portal right so you
+
+have to select which IDE you need to use
+
+Etc and then we'll configure some build
+
+utilities our build utility is Ms bill
+
+for dotnet and my one for Java
+
+and there will be many other properties
+
+as well
+
+and then you need to run the unit test
+
+cases so there should be some utility to
+
+run the unit test case as well so we
+
+will choose IDE version from the portal
+
+is it a visual studio or you know Java I
+
+mean
+
+and then we'll there will be some test
+
+criteria to be applied as well okay so
+
+let us say you have a hundred test cases
+
+unit test cases in your project in the
+
+developers project so you you have an
+
+option to use I mean how many what test
+
+cases are to be run that means you know
+
+uh just an example
+
+if you are doing it if you are running
+
+your CI pipeline for the first time you
+
+may run all 100 unit test cases
+
+okay but if you are running that uh same
+
+CI pipeline 10 15 times a day okay what
+
+you can do you can specify uh to run
+
+only the impacted test cases unit that
+
+means uh at nine o'clock I have run my
+
+CI pipeline all 100 unit test cases are
+
+one okay and at 10 o'clock again I am
+
+going to run the CI pipeline at that
+
+time you may you may specify an option
+
+here
+
+if some unit test case has been changed
+
+in between 9 and 10 o'clock
+
+you go and execute only those unit test
+
+cases don't run all the unit test cases
+
+so that means impacted unit test cases
+
+can also can only be run you can have
+
+that criteria basically why we need it
+
+so it's a very simple reason
+
+uh every one hour or every two hours if
+
+if the developers are running the CI
+
+pipeline right for that verification
+
+this running this unit test cases may
+
+take you know five minutes or 10 minutes
+
+as well based on the number of unit test
+
+cases available in the project but every
+
+time if they have to wait for 10-15
+
+minutes they get their productivity gets
+
+reduced basically
+
+so change you can configure your
+
+pipeline to run only the impacted unit
+
+test cases
+
+okay
+
+so you can also run some test cases in
+
+in parallel as well let us say you have
+
+100 unit test cases each in a test case
+
+Matrix uh a minute if it is uh not
+
+minute I would say some five seconds or
+
+whatever it is right uh if you run I'm
+
+just taking uh some number to explain
+
+okay if you are 100 unit test cases is
+
+taking 100 minutes if you make it
+
+parallel always thought happens uh they
+
+will run in one or two minutes right so
+
+that's what parallel test excretion
+
+so you will also you know configure for
+
+reporting is by default you don't need
+
+to do anything uh you can configure for
+
+code coverage Etc
+
+and there are many other properties okay
+
+in the test idea are running in test
+
+cases section
+
+and then
+
+the core coverage and quality Gates we
+
+will set up sonar Cube
+
+and then once you set up the sonar queue
+
+we will we will need to configure uh
+
+your project for the code coverage and
+
+quality so we will add some solar Cube
+
+tasks in our Pipeline and we will
+
+configure task is nothing but an utility
+
+but since it is a portal you don't see
+
+any code right everything is text box or
+
+drop down or something else right so
+
+that's the reason you don't call utility
+
+or you only call it as a task
+
+configure code coverage and setup on the
+
+config for Quality Gates Etc okay and
+
+then finally once you've done everything
+
+we will uh I mean your pipeline will
+
+build the application and it will
+
+generate the artifacts so you can call
+
+you can store those artifacts so in your
+
+bin folder you will see it right there
+
+you will see only dll but you have other
+
+components as well like HTML Etc so very
+
+well still if it is ever local it is
+
+storing in your local laptop right in
+
+your seat driver do it wherever your
+
+project is so if it is from devops CI
+
+pipeline you have to start somewhere
+
+like a nugget
+
+but I know you can store it as a zip
+
+file under
+
+download it your local file or you can
+
+store it in Azure artifacts
+
+or you can use it in Azure pipelines
+
+there is a it is a kind of you know uh
+
+storage mechanism in the artifact task
+
+basically so these are different ways
+
+that you can store but we will store in
+
+Azure pipelines only because that is uh
+
+integrated with your Azure pipeline
+
+okay and then later they will so I set
+
+sonar keep setup right uh so I will show
+
+you how to set up sonar cube in local
+
+okay it's uh I mean it's not that
+
+complicated but you know since we are
+
+not in a network like you know I am
+
+using my local laptop right and I should
+
+uh and it doesn't have any static IP
+
+address right and when you set up sonar
+
+Cube it will obviously have a portal
+
+some I mean let us say localhost slash
+
+you know some 9000 Etc okay but that URL
+
+cannot be used outside of my laptop
+
+because it's not it doesn't have any DNS
+
+so what I do I will show you the setup
+
+in sonar Cube setting up the sonar cube
+
+in local laptop but I use a SAS version
+
+of sonar Cube for doing our work labs
+
+basically SAS I mean I mean it's same
+
+basically right software as a service
+
+uh we pay for use I mean what we use
+
+basically
+
+we'll talk about this sonar Cube later
+
+when we come there basically first let's
+
+go and start with uh
+
+uh start with the basic pipelines okay
+
+so this is our project let's go to
+
+online reservation system
+
+then now let's go to pipelines so in the
+
+pipeline main menu you have all these
+
+things pipelines environments religious
+
+releases for the CD pipelines for the CI
+
+so I don't know why they mentioned you
+
+know they should have mentioned the
+
+build pipeline or something because this
+
+is a main menu right under that again
+
+you have the sub menu as a pipelines
+
+they might have they should have given
+
+it as some build pipeline or CA I don't
+
+know whatever it is but that's okay we
+
+can't do anything let's click on the
+
+pipelines this is for continuous
+
+integration
+
+so automate your build and release
+
+process using Wizard and go from cloud I
+
+mean go from Cloud to code to cloud and
+
+you you can read it create a pipeline
+
+so as I told you in my slides right I as
+
+I explained you can connect to any one
+
+of these things so our code is in
+
+Azure reposit so if you see here
+
+if we select these options directly
+
+it will go for like ml creation I am not
+
+going for that because ml is a time
+
+consuming so people okay let me explain
+
+now since we are here so people always
+
+you know uh be it in YouTube or be it in
+
+some companies some people right they
+
+always surface they always passionate
+
+about using uh command line or a script
+
+RNs some code to do their activities
+
+okay
+
+see if you don't have any option to do
+
+it go ahead and do it
+
+okay but you have if you have an option
+
+then don't do it the reason
+
+for a management or for any company it's
+
+a time consuming activity
+
+okay because uh if someone is using some
+
+tool he may do it in one day if someone
+
+is using uh some scripting or some
+
+command line utilities for the same work
+
+he may take it five days
+
+and end of the day you don't know
+
+whether you have written a perfect
+
+script or code also
+
+so so that's the reason companies invest
+
+in you know uh tools and products right
+
+okay uh see now you have this you know
+
+earlier you only have the Jenkins and
+
+before that you only have the uh
+
+python scripting and false scripting for
+
+the cicd pipeline now you see hundreds
+
+of uh you know utilities one famous we
+
+talked about right we have the atlasian
+
+bit government atlassian uh bamboo and
+
+the gitlab
+
+you see many of the people use gitlab as
+
+well it is similar to your Azure devops
+
+and it is expensive right Azure devops
+
+results expensive but why people are
+
+investing it's all about productivity
+
+basically but what some people do they
+
+will
+
+they will come here and still want to
+
+use uh ml see there are some specific
+
+scenarios where you need to use ml you
+
+have to use it you don't have an option
+
+uh but uh just for showing something you
+
+cannot use a scripting and amole Etc
+
+okay I'll give one more example
+
+for kubernetes right for kubernetes you
+
+need a ml
+
+okay uh so for deploying your Docker
+
+images okay for deploying your
+
+containers Etc okay so there people use
+
+ml okay I don't have any option I have
+
+to write the ml code okay but
+
+you have a many other products on top of
+
+kubernetes like you know you might have
+
+used car I mean her pivotal Cloud
+
+Foundry how many people I mean heard of
+
+it tcfs
+
+you guys heard of it is here
+
+pivotal Cloud Foundry let me show you
+
+this is another product this is very
+
+very you know uh famous One basically
+
+okay many people use it I know you know
+
+what is the beauty of this platform as a
+
+service the software pivotal Cloud
+
+Foundry
+
+everything is you know menu based drag
+
+and drop so if someone is uh you know
+
+maintaining their kubernetes uh a you
+
+might have seen like this right I shown
+
+you earlier isn't it
+
+in our initial classes the same version
+
+I've shown you okay
+
+uh so if you are doing your Ram uh you
+
+are deploying or you know or creating
+
+darker images or you know some VMS in
+
+some some other uh
+
+platform Arena using mlr using
+
+command line you may take you know uh
+
+three four days but if you come to
+
+pivotal Cloud country everything is uh
+
+Auto managed you just need to go and
+
+configure some of the you know
+
+properties and you need to know how to
+
+maintain the pivotal Clause boundary so
+
+so companies will benefit from the you
+
+know come in the let's say Force
+
+basically so that's the reason it will
+
+have a lot of cost savings
+
+so it's all about productivity and
+
+Effectiveness basically not about how
+
+intelligent you are me so I'm just
+
+giving some an example we keep talking
+
+about it while we are working on this CI
+
+CD pipelines Powershell okay and uh I
+
+also give you you know Basics about
+
+kubernetes as well right
+
+so I will go and use the classic editor
+
+if someone still want to learn ml there
+
+is a way what is that way
+
+you can use a classic editor
+
+to you know to create your pipeline and
+
+it will generate basically ml as well
+
+you can go and read the timer so that is
+
+the easiest way to do it basically okay
+
+Emily is case sensitive and it is a
+
+space sensitivity as well space is also
+
+important okay
+
+so uh we'll keep talking about it uh
+
+throughout our course so let's go to our
+
+first step so I selected a classic
+
+editor and here it is asking me what uh
+
+where is your code my code is in Azure
+
+reposit and obviously there will be n
+
+number of projects right so I will
+
+select a online team reservation at the
+
+time being in my your planner I have
+
+only one project online reservation
+
+system there are multiple you will see
+
+multiple so
+
+oh so in our project also there will be
+
+a number of repositories right so what
+
+is our repository name is it a online
+
+reservation system or even I guess our
+
+repository is your journalist
+
+right so let me
+
+let me open it a new tab
+
+yeah this is our uh your Journeys okay
+
+so let's uh use it a release pipeline
+
+okay RCI pipe it is CI right you can do
+
+it on anything basically so I can take
+
+my main as well that's not a problem but
+
+for CD you have to when you are doing
+
+the CD pipeline right uh you have to do
+
+it from uh you know when you are
+
+deploying it you have to do it from
+
+release I mean release for uh release
+
+Branch basically
+
+okay let me see
+
+branches
+
+so I have the ideal I have main Etc okay
+
+since it is only CI pipeline I can take
+
+a Dev or master or anything but uh so
+
+this CI pipeline uh artifacts will not
+
+be used for uh deploying let us think
+
+that your developers are using it for
+
+their day-to-day purpose okay but when a
+
+devops engineer needs to develop I mean
+
+deploy the artifacts we will go and
+
+select the release folder okay because
+
+that is a branching strategy most of the
+
+times any companies use it okay
+
+so I can take any branch here from the
+
+bottom
+
+you can work on any any one of these
+
+things for the time being to make it
+
+simple we'll start with the master
+
+Branch because I need to explain few
+
+more Concepts on top of the branches
+
+what we select here as well we'll start
+
+with the master
+
+continue and the beauty of your any
+
+platform be it git lab be it Azure
+
+devops be it AWS devops be it uh uh you
+
+know atlasian bamboo theme City Etc any
+
+one of these platforms or platform as a
+
+service or software as service right
+
+they give you the templates for all the
+
+different different application types
+
+what you have you see you see with the
+
+node.js
+
+so there are compilers node.js with
+
+grand node.js with girl
+
+okay and then you have xamarian it is
+
+for mobile development from the
+
+Microsoft and you can use even Jenkins
+
+as well to you know to cure Jenkins job
+
+as well from here also you can do it
+
+okay so that much service created this
+
+Azure devops and then you can use Azure
+
+web apps this is one of I explained what
+
+is azure web app in our initial sessions
+
+we will use this one as well okay in the
+
+later sessions and then
+
+asp.net core asp.net okay
+
+you have a python xcode Dockers okay you
+
+have all the templates okay now my
+
+application yeah
+
+information on which template do you
+
+need to use the provided by the
+
+development team
+
+no they don't tell you right they will
+
+tell you whether whether it is a desktop
+
+application or you you need to ask a is
+
+it a web application or a desktop
+
+application obviously
+
+you will come to know if someone is the
+
+moment they run an application from
+
+browser that is a web application right
+
+I mean that that is as simple as that we
+
+don't need to worry about it okay uh if
+
+you don't know you can ask them
+
+basically is it a I mean is it a Windows
+
+desktop application or a web application
+
+that's it
+
+so
+
+mine is a asp.net web application okay
+
+even apis also comes under web only
+
+because apis uh it doesn't have UI
+
+that's it right but that is again web
+
+right you can access it over Internet
+
+isn't it
+
+so whether it is an API or a HTML web
+
+application with HTML or CS HTML it is
+
+it comes under web application so mine
+
+is asp.net apply it
+
+so it will add see it will give you all
+
+the
+
+uh
+
+I mean environment which is required to
+
+run the basic pipeline basically after
+
+that we will change it we will configure
+
+it for our needs okay so by default if
+
+you see
+
+a pipeline is created for you which is
+
+ready to be used basically okay uh we
+
+will go and customize it for our next
+
+but let's have a quick look into this
+
+one okay
+
+so this all this is created based on our
+
+project type so Azure devops has got
+
+that I mean I mean intelligence
+
+basically
+
+it will go on look into the Your
+
+solution file and the project file it
+
+will identify
+
+what type of project it is okay and it
+
+will go and add all those things
+
+automatically so what is the first item
+
+we have let me change this uh in a
+
+description so online reservation system
+
+I would say
+
+uh I mean actually it is already
+
+beautiful I mean it is it is saying hey
+
+your project is online reservation
+
+system and it is uh of asp.net and this
+
+is a CI pipeline it is already named
+
+very nice but if you have some naming
+
+convention uh in your company you can
+
+always go on to change it basically okay
+
+I'm just leaving it as because it is
+
+just a name okay after that your
+
+pipeline when you when you click on
+
+Pipeline on the right hand side you see
+
+all the details this is the name of your
+
+pipeline and agent pool okay this is
+
+where we were talking about right uh is
+
+it a Microsoft hosted as in or is it a
+
+self host region if you click this
+
+so you have a hosted and private private
+
+means your self-hosted agent okay right
+
+now there are no agents in the default
+
+default is the name of your self-hosted
+
+agent okay and inside a bracket you see
+
+there are no agents that means nothing
+
+is configured hosted means it is
+
+Microsoft hosted agent the so its name
+
+is azure pipelines that means when you
+
+run the when you save this configuration
+
+and queue the build queuing is nothing
+
+but running your compilation basically
+
+okay when you cured your code is going
+
+to copy to this uh some VM in this Azure
+
+pipelines pool and it uh it the code
+
+will be copied and it will be built
+
+there you will not see it but you can
+
+see the logs
+
+okay
+
+and then you have to specify what has to
+
+be I mean
+
+these are the available uh agents means
+
+uh
+
+sorry can you go on mute
+
+if you are developing some mac uh
+
+Apple related stuff like a swift Renault
+
+so you develop an I mean Apple related
+
+applications using uh Swift okay mostly
+
+basically or objective c okay you will
+
+go and select a Mac OS as a agent that
+
+means it is a VM inside I mean in the
+
+back end anything related to Linux you
+
+may go with the Ubuntu
+
+okay Ubuntu is a flavor of Linux you
+
+might annoying so visual studio 2017 uh
+
+win 2016 that means this is for older
+
+versions of dotnet uh okay which is
+
+based on 2016 operating system 2017. you
+
+also select Windows 2019 and windows
+
+2022 as well I don't think anybody is
+
+using 2022 I think this is just a
+
+preview if I fail okay so let's go ahead
+
+and select Windows 2019 okay you will
+
+have extensive documentation on this to
+
+read it Windows 2019 is nothing but uh
+
+in the back end
+
+it will create a virtual machine some
+
+with the windows 2019 server or
+
+something on top of that it will install
+
+the visual studio 2019 required runtime
+
+basically okay we can't see it so you
+
+have the environment setup after that it
+
+will copy all the code to that
+
+to build it
+
+I'm telling you what happens in the
+
+background okay
+
+and then it is asking you hey give me a
+
+path to build your solution so by
+
+default it will give you wild card
+
+because it doesn't know right what is
+
+the solution file name Etc so that's why
+
+it is a star star slash starters sln
+
+that means it will go to the root of
+
+your Repository
+
+and take the solution file that's our
+
+star dot cell sln but you can since we
+
+know it we can go and select it so this
+
+is your repository and then under that
+
+you have the your Journeys web and then
+
+unit test okay let's go ahead and select
+
+a solution
+
+okay it doesn't have a
+
+API okay that's okay we will create one
+
+more pipeline
+
+with that uh project you know in there
+
+which contains both API and uh I know
+
+your web project okay so he selected the
+
+solution which which have to be compiled
+
+or built actually and then artifact name
+
+okay this is the where you once your
+
+application is compiled in which folder
+
+you need to save this articles okay so
+
+by default it will create a folder with
+
+name called drop okay you can change it
+
+as well that's not a problem but it will
+
+not show you where it is getting stored
+
+it is all you know uh invisible to you
+
+so right now we are doing a lot of work
+
+here you don't know right where it is
+
+getting saved because for you it is just
+
+an application similarly your artifacts
+
+will be stored in Azure pipelines uh
+
+there is a storage mechanism or a
+
+storage name under that it will create a
+
+folder called drop and uh store all your
+
+build artifacts into there into that
+
+actually okay that's about
+
+pipelines all you do all you have done
+
+is uh some name change and agent pool
+
+selection and your solution translation
+
+after that this is all what you selected
+
+in get sources this is all what you
+
+selected while you're creating a
+
+pipeline okay you can see we are doing
+
+it on the master
+
+okay and this is team project repository
+
+and then you see some options here
+
+uh clean uh right now it is uh false uh
+
+you remember in Visual Studio you can
+
+I've shown you an option to clean the
+
+solution as well
+
+that means uh whatever is generated in
+
+the bin folder or any other invisible or
+
+temporary files will be deleted if you
+
+use that clean option by default it will
+
+be true uh false you can make it true so
+
+this is very helpful uh I mean if you
+
+see now whenever you come you run your
+
+pipeline right if you see any issues
+
+relatable first you can do this so that
+
+you will come to know if there are any
+
+issues
+
+Etc I will save only my source only okay
+
+but it is not visible to you okay what
+
+happens okay
+
+you can tag the resources basically tag
+
+is nothing but you know in your repos
+
+if I go to my boards Etc
+
+if you open any one of these things
+
+right
+
+so right now in this uh on the related
+
+work what you see in any way you will
+
+see your child's and parents and it will
+
+also show you some you know uh release
+
+information uh in which release this has
+
+been gone so all the when you run
+
+something here right in this build
+
+pipeline or release pipeline this this
+
+will be tagged in your you know
+
+uh in your work items are in your
+
+reports as well it will be shown
+
+nothing more than that
+
+right now everything is empty when I run
+
+when I start running those things you
+
+can see it here basically see uh when
+
+you do some it will the way it is
+
+showing all these branching information
+
+Etc you will see about your I know build
+
+and utilize pipelines as well right now
+
+everything is empty that's about that I
+
+will say uh
+
+foreign
+
+it is going to
+
+tag those sources with this format
+
+build.build numbers guys if you see
+
+anything like this a dollar starting
+
+with a dollar
+
+and then uh something inside your
+
+brackets sorry
+
+something inside your bracket that means
+
+this is a variable so right now what you
+
+see is a Azure devops system variables
+
+so there are variables available to
+
+fetch the information about your
+
+pipelines basically So when you say
+
+build that build number for every uh if
+
+you go to code reposited for every
+
+commute it will generate one commit
+
+number right one commit ID similarly
+
+for every build it will generate one
+
+build number let us say it might be when
+
+you do it for the first time it could be
+
+one after that two three four etcetera
+
+so build that build number means it will
+
+take the build number build number of
+
+this build and then tag it actually okay
+
+that's about it
+
+you will learn about it okay
+
+and then these are all you know
+
+self-explanatory uh obviously we need to
+
+report this build statuses okay uh we'll
+
+let's not talk about all these things
+
+now okay just stop it here okay and then
+
+agent job
+
+this is what you selected on the top
+
+right whatever you selected here the
+
+agents will come here actually so I'll
+
+give the job name as you know let us say
+
+uh web web basically because I'm
+
+compiling web application okay and all
+
+the agent pool information inherited
+
+from pipeline from here right whatever
+
+you selected
+
+basically comes here okay and in the
+
+bottom you see demands I was telling
+
+right hey it will create a VM in uh I
+
+mean in the back end and it will install
+
+all the prerequisities as you see
+
+uh your Azure devops are Azure pipelines
+
+is the intelligent enough to identify
+
+what is to be included in that agent so
+
+it is including Ms Bill visual studio
+
+and vs test because I have some test
+
+assemblies as well
+
+it includes all the electricities if
+
+there is something extra required we can
+
+go and add it as we will talk about it
+
+and then parallelism
+
+so right now I have only one agent here
+
+that means one job here so I can go and
+
+add a n number of jobs basically uh more
+
+than one job to this pipeline okay so
+
+when I have more than one job I can run
+
+parallely as well multi-agent okay multi
+
+configuration and none right now I'm not
+
+selecting because I'm starting with a
+
+simple pipeline okay
+
+uh
+
+so timeout timeout is nothing but you
+
+know sometimes what happens uh your uh
+
+when you save and queue it it may take
+
+uh two three minutes uh to start as well
+
+sometimes it may take five minutes
+
+sometimes it does many of the time it
+
+doesn't take any time to start basically
+
+so but you never know uh it cannot be
+
+unlimited time right infinite time right
+
+you basically keep here time out let us
+
+say when you click on Save and queue if
+
+it you know if it takes more than one
+
+minute time out the job means it will it
+
+will abort the job that is the thing you
+
+are giving it action so you can read it
+
+okay and job cancel timeout you can
+
+cancel the job itself and then
+
+dependencies as well okay right now I
+
+have only one job but if I have multiple
+
+jobs in this same pipeline I can add a
+
+job you can see I mean how do I add a
+
+job you can go to pipeline this is the
+
+parent
+
+go and add an agent job
+
+then I will have another job I can name
+
+it as a I click this
+
+I'll take it as well
+
+API
+
+okay uh
+
+there is nothing added because I I don't
+
+I did not specify anything for this okay
+
+so what is this uh dependencies
+
+so I want to run this job
+
+only
+
+after my API job is
+
+executed such kind of uh
+
+sequencing criteria I can put it that is
+
+called jobs I mean dependencies so most
+
+of the times what happens uh you might
+
+be having this web application as some
+
+API application but it may need some
+
+prerequisities to be built basically
+
+such in such kind of cases you will use
+
+this dependencies you will ask about hey
+
+what is the sequence that I need to
+
+build it if those developers may tell
+
+you hey first run this and then you have
+
+to run this like that in those cases you
+
+will use the dependencies okay finally
+
+you have this some conditions we'll talk
+
+about these conditions like when you run
+
+this job okay you have options when all
+
+previous jobs exceed uh succeeded all
+
+previous jobs have succeeded even if
+
+your previous job has failed Etc there
+
+are three four options and custom
+
+condition as well I will explain it uh
+
+when we do customize it heavily
+
+and then find also all we've done is a
+
+prerequisites now this is where uh your
+
+dependency management comes into picture
+
+so it added a task this these are all
+
+the tasks okay
+
+pipeline under pipeline you will have a
+
+number of jobs under each job you will
+
+have a task these are all the tasks okay
+
+what is this task about so you will see
+
+some you know task version Etc so
+
+obviously task is nothing but a utility
+
+there will be a number of questions
+
+available but don't worry by default it
+
+will take the
+
+greatest basically which is working or
+
+which is stable okay
+
+and you see the yaml as well here
+
+okay
+
+so if you are using AML basically to
+
+create your pipeline
+
+just for this task you need to add these
+
+many statements okay steps under that
+
+steps you have the task as you know this
+
+one okay and display name what you see
+
+here and then inputs
+
+it's like this you need to use it okay
+
+so I'm going to use the latest version
+
+of 441 and this is my task display name
+
+okay
+
+when you specify this right what happens
+
+your comp your pipeline knows where to
+
+go and look for uh references of the
+
+project basically okay
+
+so this control options and output
+
+variables
+
+these two sections will be available in
+
+each and every task these are the common
+
+sections basically or common
+
+configurations uh across all the tasks
+
+so you will see it in everything
+
+we'll talk about this as well tomorrow
+
+when we are customizing it more this is
+
+just a tool okay
+
+and then negate register okay I
+
+mentioned uh my pipeline to use nuget
+
+but I also need to mention what command
+
+to be used right so so there is a
+
+command that this nuget is going to use
+
+or this pipeline is going to use
+
+basically so there are multiple commands
+
+restore pack push custom we are going to
+
+use a restore command the reason uh I uh
+
+in my project I have some
+
+dependencies to be downloaded one is
+
+send grid and some are some system
+
+related so downloading is nothing but
+
+restore basically okay we use a restore
+
+command okay
+
+path to solution this is already I
+
+selected in the top that's the reason
+
+your solution file has come okay and uh
+
+all the
+
+the usable components that you will see
+
+in the nuget store will be called as a
+
+Fields basically each and every reusable
+
+com component will be called as a feed
+
+okay
+
+in uh artifacts terminology okay so
+
+Fields I select here feeds in my nuget
+
+DOT config these are the two options
+
+okay fits I select here what feed I want
+
+to select I want to
+
+select this and then use packages from
+
+nuget data so this is what is their
+
+configured in a visual studio okay and
+
+there will be some Advanced options guys
+
+uh
+
+these are about caching Etc we talk
+
+about and you see control options and
+
+output variables again here you see here
+
+you see here as well and you will see in
+
+each and every task as I told you you
+
+see control options and output variables
+
+okay now what is there in the build
+
+solution
+
+so it is all about building your
+
+uh solution right with all the projects
+
+so it is saying hey take this solution
+
+it is grayed out because I selected in
+
+the top
+
+if you want to edit make it editable you
+
+click on this bangle icon if you click
+
+this you will have option unlinked
+
+okay
+
+so I'm saying use the latest version of
+
+Visual Studio to build my application in
+
+the CI pipeline okay if you want any
+
+specific version you can select
+
+basically let's use the latest version
+
+2019 or latest both are same
+
+and by default it has added all these Ms
+
+build arguments okay this is the beauty
+
+of these things otherwise if you are
+
+using a git uh sorry if you are using
+
+Jenkins in older days even in Jenkins
+
+nowadays right they are also providing a
+
+template like this it will go and I'll
+
+add all these uh you know parameters uh
+
+arguments is nothing but parameter right
+
+if you are not using uh any platforms
+
+like this you need to go and you know
+
+understand about all these things this
+
+you call it as a switches or arguments
+
+whatever you call it okay
+
+it's not only about Ms Bill if you are
+
+using any utility which is command line
+
+you have to use all these switches right
+
+even in Ms Das or Linux this is how you
+
+send the arguments to the command side
+
+so deploy and build this to web publish
+
+uh method is package package as a single
+
+file skip invalid configurations and
+
+package locations package location means
+
+once it is done where it is going to
+
+store your artifacts it is going to be
+
+storing in a location called artifacts
+
+to staging directory these are standard
+
+basically deploy and Bill means it is
+
+saying hey once you build is successful
+
+you want to deploy you know we don't it
+
+won't deploy basically here deployment
+
+deployment is nothing it's not about
+
+deploying your code to servers it's
+
+about copying to this location web
+
+publish method is a package and a single
+
+file package as a single file is true
+
+that means once you compile it each and
+
+every artifact generated from your you
+
+know uh Solution by our compilation will
+
+be
+
+will be stored as a single file means
+
+it's a zip file basically in that in
+
+that zip file uh it will you call it as
+
+a package this method basically it is a
+
+zip package that's what it is basically
+
+okay uh that's a beauty you don't need
+
+to worry about it automatically gets
+
+generated based on the project type what
+
+you have and then we have a build
+
+platform variable
+
+and configuration variable this is what
+
+you see in Visual Studio when you right
+
+click on the properties right if you
+
+want to see what is where this variable
+
+is you know uh created you can come to
+
+the variable section
+
+here build configuration is a release
+
+mode build platform is necessary I told
+
+you right if you are if you are
+
+compiling your application from Visual
+
+Studio go and select the debug mode but
+
+if you are doing it from for a CI
+
+pipeline purpose or a deployment purpose
+
+see how it is a release mode if you use
+
+a debug mode many temporary files will
+
+be created but if you use a release mode
+
+no temporary files will be created which
+
+are not required for your application
+
+basically and these are all you know uh
+
+some metadata which you don't need to
+
+worry about it
+
+and then again you see advanced
+
+okay
+
+after that uh
+
+you have built-in parallel restore
+
+negate Packages Etc we already have it
+
+and then control options and variables
+
+similarly test assemblies is also a.net
+
+project right it is
+
+in Google solution
+
+create log file not required
+
+I mean you can select it I mean it will
+
+be the by default you have all the
+
+information Okay so
+
+you can you can basically select I mean
+
+you need a minimal information or you
+
+know you need a detailed information you
+
+need a Diagnostics Etc okay Danish means
+
+it is very low level details it will
+
+show you each and every step of your uh
+
+you know build basically
+
+okay okay uh it will increase the
+
+storage even if you go to MS-DOS or you
+
+know scripting or unique scripting or
+
+Linux scripting you will always have
+
+these options uh when you're running the
+
+commands as well you have an option
+
+right wordpose it will give you when you
+
+run the command basically to get the
+
+command point it will not give you any
+
+log but when you go and specify these
+
+things it will show you a lot of
+
+information about that command basically
+
+I mean will it will this log report be
+
+useful if any error occurs like whether
+
+frankly to speak we don't need at that
+
+level I will show you when you run this
+
+one you will already you will see a log
+
+base currently okay okay this is about
+
+your system information obviously we use
+
+x86 right who is using x64 x64 means
+
+your 32-bit
+
+yeah right a little bit uh I don't think
+
+anyone is having 30 debate from last
+
+seven eight years everything is
+
+what is it
+
+x86 is a
+
+no I don't think so okay
+
+this is always a confusion to me
+
+32-bit because we don't read it right
+
+x64 refers to 64 bits 64-bit CPU and
+
+then uh
+
+we need to read it man I always get
+
+confused basically
+
+yeah x86 is 32
+
+okay
+
+okay so this would be 64 bit should we
+
+go with 64 by default
+
+all right right but uh so but what I see
+
+uh whether it is 86 as 64 it doesn't
+
+make system but uh there are some
+
+programming languages let us say you are
+
+working on some Android API Android apps
+
+or you know or uh are some com level
+
+components it's a world ribbon let us
+
+say uh you are using uh let us say WPF
+
+okay WPF is uh I know it's a win uh
+
+desktop desktop like application
+
+basically but it is rich in UI if you go
+
+on the user normal desktop application
+
+the UI will be normal if you use a WPF
+
+it will give you a glossy look and feel
+
+kind of stuff all the rich controls will
+
+be there there basically gets installed
+
+in your desktop so it really matters
+
+whether you are using 32-bit or 64-bit
+
+okay but these are the web applications
+
+where it is going to be stored in a I we
+
+are going to deploy them in a IIs
+
+internet information service cases ah so
+
+that is a software on top of your
+
+operating system right that will
+
+abstract all these issues like a x86 or
+
+x64
+
+okay
+
+but uh you can give attention when
+
+you're working on that kind of desktop
+
+application but for a web I don't think
+
+it it's a matter basically okay okay
+
+log history you can specify it you can
+
+specify the versions I mean how you want
+
+to store this around you can leave it
+
+I'm just giving a run through today so
+
+you have control options and output
+
+variables it is same for a as I told you
+
+that for all the
+
+tasks okay
+
+and if you go to test assemblies again
+
+you will see a name but here you see hey
+
+select the tests using test assemblies
+
+or other options here test plan and test
+
+run so test plan and test run are part
+
+of your I mean which are done by your
+
+auto I mean your test testing team
+
+basically but what we are doing is a
+
+white box unit test cases which is part
+
+of our
+
+our project basically unit test cases so
+
+for that you need to select test
+
+assembly assembly is nothing but a dll
+
+okay
+
+that's the reason we select test
+
+assemblies
+
+and uh you know it is very intelligent
+
+you see the project name you need to
+
+provide right
+
+it uh it is giving you know star test
+
+star star test STAR dot dll because uh
+
+how we name our Visual Studio Projects
+
+you know obviously will if it is a test
+
+project we will keep a word called test
+
+actually that's the reason it is giving
+
+but if you want to give it if there are
+
+multiple if there are some projects with
+
+the test as well then it will conflict
+
+basically so the better way you go and
+
+look for the project name okay where I
+
+can see you can go to sources
+
+or you can go to
+
+uh you can go to Red Cross site
+
+give the project name because most of
+
+the times we we don't use testing the
+
+project name for all the projects but in
+
+some cases you may use it you never know
+
+right what people use it so
+
+our project name is this one
+
+okay this is a project name but when you
+
+compile it what dll will be generated uh
+
+your Journeys web dot tests Dot dll
+
+okay that is the output basically
+
+I explained it yesterday okay
+
+so
+
+go to Solutions only
+
+replace this path
+
+that's it and then okay
+
+here is
+
+just in case if you are a solution is
+
+having some projects with this word okay
+
+so that you will not create a you know
+
+conflict
+
+and then these are all by default you
+
+don't need to worry about these things
+
+this is for your pipeline not for your
+
+configuration okay your results where it
+
+will store and I was talking about some
+
+test fill the criteria right in our in
+
+our slide we'll talk about it uh
+
+tomorrow day after tomorrow Etc okay all
+
+these things will talk about it uh
+
+tomorrow day after tomorrow okay
+
+and then uh uh we generally use this
+
+baseball basically we will uh you know
+
+can disable or delete it actually you
+
+can disable or you can delete it
+
+for the timing Let It Be and finally
+
+publish artifacts that means uh very uh
+
+you need to copy your artifact set it is
+
+going to be saved in the artifact
+
+staging directive uh you you never see
+
+it basically all you see is this folder
+
+name draw we already given this name in
+
+the top right that's why it has come
+
+here okay and where is the location this
+
+folder will be available in a location
+
+called Azure Pipelines
+
+okay and these are all again uh your
+
+common things there will be Advanced
+
+okay
+
+so uh tar the artifact before uploading
+
+I think this is for the Unix or
+
+something okay so but these are all the
+
+options the task that you have
+
+for your asp.net web application by
+
+default you got it basically okay uh we
+
+will you know basically we will go and
+
+customize all these things from tomorrow
+
+so for the time being let's go and save
+
+it
+
+okay it is saved now go on the Queue it
+
+basically Q is nothing but starting the
+
+build okay let's go on the queue
+
+it is basically confirmation okay is
+
+this information is this right R1 okay
+
+and you see enable system diagnetics it
+
+is also giving an option here okay I'm
+
+not selecting it for the timing just run
+
+it
+
+so it is showing you all the metadata
+
+hey what is your repository and project
+
+what is the last latest commit ID when
+
+it is started how much time it took uh
+
+what are the work items that are
+
+included
+
+is it enable for test and coverage okay
+
+people can see the changes as well
+
+now okay I got some error no
+
+no hosted parallel has been purchased or
+
+granted uh
+
+I think my what I say my free credits
+
+are over
+
+uh this is let me did I select a
+
+parallel
+
+all right
+
+so basically you know uh you will get
+
+free hours to run your jobs basically
+
+free means uh
+
+when you create your organization first
+
+you will you will get some 1800 minutes
+
+of free time to run your jobs for a
+
+month basically after that uh your 1800
+
+minutes will be over then you will be
+
+charged basically okay let me see what
+
+is the issue for me is it uh my credits
+
+expiration or is it something else okay
+
+so you will not see this issue if you
+
+are using your organization one because
+
+obviously it will the quota will not be
+
+free right it is paid okay let me go and
+
+uh go to my pipeline
+
+and edit it actually click this
+
+edit the pipeline
+
+go to agent let us select any
+
+parallelism here no nothing here I did
+
+not select any parallel
+
+let me take this remove this
+
+uh
+
+remove
+
+okay I have only one let me save it
+
+my credits might have been expired as
+
+well or I don't have a free credits I
+
+need to enable it okay
+
+no hosted parallelism has been purchased
+
+or granted to request a free parallel
+
+parallelism Grant okay
+
+okay guys from last
+
+in the last five six months basically
+
+you know these guys Microsoft earlier
+
+provided uh three credits by default
+
+basically okay I think from the last
+
+five six months they changed it they are
+
+not giving free by default basically so
+
+we need to request for it okay we can
+
+troubleshoot it but I since I know it
+
+you can basically
+
+you can see the error here it will guide
+
+you what it is uh what is the problem
+
+okay
+
+I don't have the free credits let me
+
+copy this okay
+
+copy
+
+so what this guy is saying hey please
+
+fill out this following form
+
+for free credit that's what it is saying
+
+so you go here our other one is you can
+
+email as well okay
+
+there is an email available
+
+so give your name email address email
+
+address that you are using for your
+
+Azure devops okay and you have to give
+
+the organization name how do you get the
+
+organization name
+
+you go here and uh
+
+till this place basically
+
+your root URL and your organization name
+
+okay let me put it here what is it put
+
+it
+
+my organization okay
+
+and then let's say
+
+it's by I guess X
+
+what is the name I'm using there okay
+
+what's your email ID
+
+score 86.
+
+you do as I told you don't need it if
+
+you are using paid version I'm trying to
+
+use free that's why okay
+
+are you requesting a parallel increase
+
+for public or private projects I would
+
+say private
+
+okay public means anyone can see it okay
+
+and then finally
+
+save it foreign
+
+is it
+
+yeah we can see only the first part like
+
+what is your name
+
+okay I actually submitted as well just
+
+let me know if it is refreshed yeah
+
+okay just a name right you can take it
+
+that's a self-explanatory taking the
+
+organization name okay
+
+I shown you how to take the organization
+
+right this is the first part
+
+yeah okay
+
+all right click on this or when you
+
+click on it you will get the similar
+
+thing here when you click on the
+
+organization
+
+okay you just take it and do we also
+
+need to have credits to check this uh
+
+things at all right yeah actually I tell
+
+you uh till January or February this was
+
+not the case basically
+
+okay
+
+from January or February they started
+
+this one looks like many people started
+
+using it right okay uh they see when
+
+you're running something obviously you
+
+are using their infrastructure isn't it
+
+so it's an expensive for them but if I
+
+go to my other organizations right let
+
+me go to online travel
+
+okay
+
+this is my other organization if I go
+
+here any of these projects I think I
+
+should be able to create a pipeline
+
+the reason
+
+this is not my this is my older uh you
+
+know what I say
+
+old organization before this role has
+
+come up basically okay
+
+I'm I'm quickly doing something you see
+
+okay
+
+I think I should be able to
+
+save and queue I'm not doing anything
+
+I'm just trying to see basically
+
+uh if I want to see Lux I can click this
+
+if I click it I will see all the locks
+
+what is happening
+
+now it is trying to acquire an agent
+
+from the code Cloud basically
+
+it is
+
+yeah you see
+
+the bill started this year right
+
+yes
+
+yeah it is a complete clock for say as I
+
+told you right I created my other
+
+organization before January
+
+okay I mean last year I created that
+
+organization
+
+okay for all the new organizations what
+
+people are creating after January or
+
+February they are asking us to create a
+
+request so that they will go and enable
+
+that free credits for you basically
+
+okay uh you know recently some of my you
+
+know old batch guys were asking hey it
+
+is giving me here that but the problem
+
+you know they were not uh reading the
+
+error basically what is that okay after
+
+they send that you know request I think
+
+in one or two days uh they were they
+
+were enabling it okay I think you can do
+
+that today itself okay so that by
+
+tomorrow or you know adapter tomorrow
+
+you will get that enabled okay
+
+you see now in my older organization it
+
+is happening but in a new organization
+
+this is where I am having them because I
+
+just created yesterday
+
+okay
+
+so let me go back there uh online travel
+
+and then Clips I can see my pipeline is
+
+completed go to Pipelines
+
+this is still going on it is running
+
+basically it will give you all the
+
+information
+
+it's a done almost basically
+
+okay guys this is just a tour of however
+
+CI pipeline looks like okay so uh
+
+tomorrow we will go in detail and we'll
+
+customize as well you see uh in the
+
+bottom right you see the artifact is
+
+produced one artifact is produced okay
+
+if you click this it is showing 100 unit
+
+test case 100 test pass I don't have any
+
+unit test cases okay
+
+what is that
+
+when you click on this this is the drop
+
+folder it will contain all the artifacts
+
+basically they were I have some web I
+
+have some micro services and rest
+
+everything is the system generated
+
+because you will use the same artifact
+
+to deploy to the IIs basically since it
+
+is a web application so It prepares your
+
+CI Bible knows that you know these are
+
+required when you are replying to the
+
+some server basically
+
+okay so we'll go in detail tomorrow
+
+uh
+
+will work on that okay to go through I
+
+mean the configuration or customization
+
+okay guys
+
+you know uh can you help us to I mean uh
+
+uh do we also need to request for uh the
+
+parallel yeah yeah what you do what can
+
+we just uh
+
+no no what you do you do it today itself
+
+you create an organization right okay uh
+
+let me give you that URL I got that URL
+
+right
+
+so that you will go and submit
+
+where I can find that URL this is my
+
+online reservation system I got that
+
+I can go to the pipelines okay this is
+
+scale red go here
+
+open any one of these things
+
+and click on this okay
+
+uh it's already in the notepad right
+
+okay
+
+create an organization and use that in
+
+your
+
+let me put it in the chat okay
+
+okay so how do we
+
+get the free credits
+
+okay that's right once you uh we have we
+
+have the organization Creator right once
+
+you put it your organization
+
+uh uh in that uh request right
+
+application I mean in that web form they
+
+will give you they will enable it
+
+actually they will enable it for you
+
+okay okay
+
+so that we can see you know you go to
+
+the organization
+
+organization settings I shown you
+
+earlier when we were talking about these
+
+things users
+
+where is that
+
+this some place where you see all the
+
+free stuff please I mean how many
+
+credits are there that's in the jobs
+
+sorry
+
+I say this is where you see basically
+
+right now I have a zero Microsoft worded
+
+in zero basically if I have something it
+
+will tell me the time as well how much
+
+time you you have it basically 18 time
+
+means it's not like when you start and
+
+when you it's not about that actually uh
+
+it's about the time it takes to run this
+
+so right now it taken one minute 51
+
+seconds right that means I can use it
+
+1800 times basically 1800 minutes will
+
+be coming for free for you
+
+okay that it will be shown there so
+
+first you do I pasted that URL there uh
+
+submit your request with this with your
+
+organization name complete organization
+
+your Dev dot azure.com your organization
+
+when you click here
+
+you will get this URL
+
+okay
+
+that's simple I've shown you right
+
+that's very simple
+
+you got the URL in the chat you will put
+
+it okay yeah do it after this one takes
+
+hardly one minute right
+
+okay guys that's it for today uh we'll
+
+catch up tomorrow
+
+for more advanced questions okay
+
+okay thank you
